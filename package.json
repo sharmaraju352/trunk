@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nps",
     "test": "npm start test",
-    "coverage": "npm start test.unit.coverage",
+    "test:cover": "npm start test.unit.coverage",
     "build": "npm start build",
     "presetup": "yarn install",
     "setup": "npm start config && npm start setup.script",
