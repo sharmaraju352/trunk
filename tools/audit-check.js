@@ -1,7 +1,6 @@
 const { exec } = require('child_process');
 
 dir = exec("npm audit", function (err, stdout, stderr) {
-    console.log(stdout);
     const criticalVulnerabilities = stdout.match(/\d+ critical/g)[0].match(/\d+/)[0];
     const highVulnerabilities = stdout.match(/\d+ high/g)[0].match(/\d+/)[0];
     const color = criticalVulnerabilities > 0 ||  highVulnerabilities > 0 ? '\x1b[31m' : '\x1b[32m';
