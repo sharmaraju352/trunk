@@ -193,7 +193,7 @@ module.exports = {
                     hiddenFromHelp: true
                 },
                 coverage: {
-                    script: 'nps "test --coverage"',
+                    script: 'cross-env NODE_ENV=test jest --testPathPattern=unit',
                     hiddenFromHelp: true
                 }
             },
