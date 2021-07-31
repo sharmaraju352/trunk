@@ -1,18 +1,19 @@
 name: CD
 
 on:
-  push:
-    branches:
-      - master
+    push:
+        branches:
+            - master
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: cp .env.prod .env
-      - uses: akhileshns/heroku-deploy@v3.12.12
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "trunk-poc"
-          heroku_email: "sharmaraju352@gmail.com"
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: akhileshns/heroku-deploy@v3.12.12
+              with:
+                  heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+                  heroku_app_name: "trunk-poc"
+                  heroku_email: "sharmaraju352@gmail.com"
+            - run: cp .env.prod .env
+
