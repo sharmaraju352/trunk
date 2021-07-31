@@ -15,5 +15,3 @@ jobs:
                   heroku_api_key: ${{secrets.HEROKU_API_KEY}}
                   heroku_app_name: "trunk-poc"
                   heroku_email: "sharmaraju352@gmail.com"
-            - run: cp .env.prod .env
-
